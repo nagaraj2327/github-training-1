@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Developer & Designer</title>
+    <meta name="description" content="Professional portfolio showcasing skills, projects, and achievements." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Page transition overlay -->
+    <div class="page-transition" id="page-transition"></div>
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- WebGL Canvas (fixed background) -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
+
+    <!-- Floating Navbar -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <span class="logo-dot"></span>
+            <span>Dev<span class="accent">.</span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            <a href="#certificates" class="nav-link" data-section="certificates">Certs</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+        <a href="login.html" class="nav-login-btn" id="nav-auth-btn">Sign In</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <i data-lucide="zap" class="icon-sm"></i>
+                <span>Available for work</span>
+            </div>
+            <h1 class="hero-title reveal-up">
+                Hi, I'm <span class="gradient-text" id="typed-name">NAGARAJ</span>
+            </h1>
+            <div class="hero-roles reveal-up">
+                <span>I build </span>
+                <span class="typewriter" id="typewriter"></span>
+            </div>
+            <p class="hero-desc reveal-up">
+                Crafting digital experiences that blend elegant design with robust code.
+                Passionate about building products that make a difference.
+            </p>
+            <div class="hero-cta reveal-up">
+                <a href="#projects" class="btn btn-primary">
+                    <i data-lucide="layers" class="icon-sm"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                    <i data-lucide="mail" class="icon-sm"></i> Let's Talk
+                </a>
+            </div>
+            <div class="hero-stats reveal-up">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="30">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Clients</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i data-lucide="chevron-down" class="bounce-icon"></i>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get to know me</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-avatar-wrap reveal-left">
+                    <div class="avatar-card glass-card">
+                        <div class="avatar-img">
+                            <i data-lucide="user" style="width:80px;height:80px;opacity:0.4;"></i>
+                        </div>
+                        <div class="avatar-badges">
+                            <div class="a-badge glass"><i data-lucide="code-2" class="icon-sm"></i> Full Stack Dev</div>
+                            <div class="a-badge glass"><i data-lucide="palette" class="icon-sm"></i> UI/UX Design</div>
+                            <div class="a-badge glass"><i data-lucide="cpu" class="icon-sm"></i> Problem Solver</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <p class="about-bio">
+                        I'm a passionate full-stack developer with a love for creating beautiful, functional digital
+                        experiences.
+                        With expertise spanning frontend to backend, I bring ideas to life with clean code and
+                        thoughtful design.
+                    </p>
+                    <p class="about-bio">
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open-source
+                        projects,
+                        or designing sleek interfaces. I believe great software is both powerful and delightful to use.
+                    </p>
+                    <div class="about-info-grid">
+                        <div class="info-item glass">
+                            <i data-lucide="map-pin" class="icon-sm accent-icon"></i>
+                            <span>India</span>
+                        </div>
+                        <div class="info-item glass">
+                            <i data-lucide="briefcase" class="icon-sm accent-icon"></i>
+                            <span>Freelance Open</span>
+                        </div>
+                        <div class="info-item glass">
+                            <i data-lucide="graduation-cap" class="icon-sm accent-icon"></i>
+                            <span>B.Tech CS</span>
+                        </div>
+                        <div class="info-item glass">
+                            <i data-lucide="heart" class="icon-sm accent-icon"></i>
+                            <span>Open Source</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="margin-top:2rem;display:inline-flex;">
+                        <i data-lucide="download" class="icon-sm"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">What I know</span>
+                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+            </div>
+            <div class="skills-categories reveal-up">
+                <button class="cat-btn active" data-cat="all">All</button>
+                <button class="cat-btn" data-cat="frontend">Frontend</button>
+                <button class="cat-btn" data-cat="backend">Backend</button>
+                <button class="cat-btn" data-cat="tools">Tools</button>
+            </div>
+            <div class="skills-grid" id="skills-grid">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">What I've built</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+            </div>
+            <div class="filter-bar reveal-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CERTIFICATES ── -->
+    <section id="certificates" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Achievements</span>
+                <h2 class="section-title">My <span class="gradient-text">Certificates</span></h2>
+            </div>
+            <div class="certs-grid" id="certs-grid">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get in touch</span>
+                <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <div class="glass-card contact-info-card">
+                        <h3>Let's work together</h3>
+                        <p>Have a project in mind? I'd love to hear about it. Send me a message and let's make something
+                            amazing.</p>
+                        <div class="contact-links">
+                            <a href="mailto:alex@email.com" class="contact-link glass">
+                                <i data-lucide="mail" class="icon-sm accent-icon"></i>
+                                <span>alex@email.com</span>
+                            </a>
+                            <a href="#" class="contact-link glass">
+                                <i data-lucide="phone" class="icon-sm accent-icon"></i>
+                                <span>+91 98765 43210</span>
+                            </a>
+                            <a href="#" class="contact-link glass">
+                                <i data-lucide="map-pin" class="icon-sm accent-icon"></i>
+                                <span>India</span>
+                            </a>
+                        </div>
+                        <div class="social-row">
+                            <a href="#" class="social-btn glass" aria-label="GitHub"><i data-lucide="github"></i></a>
+                            <a href="#" class="social-btn glass" aria-label="LinkedIn"><i
+                                    data-lucide="linkedin"></i></a>
+                            <a href="#" class="social-btn glass" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                            <a href="#" class="social-btn glass" aria-label="Instagram"><i
+                                    data-lucide="instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap reveal-right">
+                    <form class="glass-card contact-form" id="contact-form" novalidate>
+                        <div class="form-group">
+                            <input type="text" id="f-name" class="form-input" placeholder=" " required />
+                            <label for="f-name" class="form-label">Your Name</label>
+                            <i data-lucide="user" class="form-icon icon-sm"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="f-email" class="form-input" placeholder=" " required />
+                            <label for="f-email" class="form-label">Email Address</label>
+                            <i data-lucide="mail" class="form-icon icon-sm"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="f-subject" class="form-input" placeholder=" " />
+                            <label for="f-subject" class="form-label">Subject</label>
+                            <i data-lucide="tag" class="form-icon icon-sm"></i>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="f-msg" class="form-input form-textarea" placeholder=" " required></textarea>
+                            <label for="f-msg" class="form-label">Message</label>
+                            <i data-lucide="message-square" class="form-icon icon-sm"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                            <i data-lucide="send" class="icon-sm"></i>
+                            <span id="btn-label">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="logo-text">Dev<span class="accent">.</span></span>
+            <span class="footer-copy">© 2024 All rights reserved.</span>
+            <div class="footer-links">
+                <a href="#hero">Top</a>
+                <a href="#projects">Work</a>
+                <a href="#contact">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="main.js"></script>
+
+    <!-- Supabase: Auth + Contact Form -->
+    <script>
+        (async () => {
+            const SUPABASE_URL = 'https://ueboldprywbsoajqfuut.supabase.co';
+            const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVlYm9sZHByeXdic29hanFmdXV0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0NjQ3MDEsImV4cCI6MjA4NzA0MDcwMX0.pqCyYHNUJEe5o6538FrI8JGpYNJyNLtJDRsTisxBIGE';
+            const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+            // ── Toast helper ────────────────────────────────────
+            function showToast(message, type = 'info') {
+                const existing = document.getElementById('sb-toast');
+                if (existing) existing.remove();
+                const toast = document.createElement('div');
+                toast.id = 'sb-toast';
+                toast.textContent = message;
+                Object.assign(toast.style, {
+                    position: 'fixed', bottom: '2rem', left: '50%',
+                    transform: 'translateX(-50%) translateY(20px)',
+                    background: type === 'error' ? 'rgba(239,68,68,0.9)' : type === 'success' ? 'rgba(34,197,94,0.9)' : 'rgba(99,102,241,0.9)',
+                    color: '#fff', padding: '0.85rem 1.8rem', borderRadius: '999px',
+                    fontFamily: "'Outfit', sans-serif", fontSize: '0.95rem', fontWeight: '500',
+                    zIndex: '9999', boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                    backdropFilter: 'blur(12px)', transition: 'all 0.4s ease', opacity: '0',
+                });
+                document.body.appendChild(toast);
+                requestAnimationFrame(() => {
+                    toast.style.opacity = '1';
+                    toast.style.transform = 'translateX(-50%) translateY(0)';
+                });
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateX(-50%) translateY(20px)';
+                    setTimeout(() => toast.remove(), 400);
+                }, 4000);
+            }
+
+            // ── Session: update nav button ───────────────────────
+            const { data: { session } } = await sb.auth.getSession();
+            const navAuthBtn = document.getElementById('nav-auth-btn');
+            if (navAuthBtn) {
+                if (session) {
+                    navAuthBtn.textContent = 'Logout';
+                    navAuthBtn.href = '#';
+                    navAuthBtn.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        await sb.auth.signOut();
+                        showToast('Logged out successfully', 'success');
+                        setTimeout(() => {
+                            navAuthBtn.textContent = 'Sign In';
+                            navAuthBtn.href = 'login.html';
+                        }, 800);
+                    });
+                }
+            }
+
+            // ── Contact Form → Supabase DB ───────────────────────
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('f-name')?.value.trim();
+                    const email = document.getElementById('f-email')?.value.trim();
+                    const subject = document.getElementById('f-subject')?.value.trim();
+                    const message = document.getElementById('f-msg')?.value.trim();
+                    const submitBtn = document.getElementById('submit-btn');
+                    const btnLabel = document.getElementById('btn-label');
+
+                    if (!name || !email || !message) {
+                        showToast('Please fill in Name, Email, and Message', 'error');
+                        return;
+                    }
+
+                    if (submitBtn) { submitBtn.disabled = true; }
+                    if (btnLabel) btnLabel.textContent = 'Sending...';
+
+                    const { error } = await sb.from('contacts').insert([
+                        { name, email, subject: subject || '', message }
+                    ]);
+
+                    if (error) {
+                        showToast('Failed to send: ' + error.message, 'error');
+                        if (submitBtn) submitBtn.disabled = false;
+                        if (btnLabel) btnLabel.textContent = 'Send Message';
+                    } else {
+                        showToast('Message sent successfully! I\'ll be in touch soon.', 'success');
+                        contactForm.reset();
+                        if (submitBtn) submitBtn.disabled = false;
+                        if (btnLabel) btnLabel.textContent = 'Send Message';
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
